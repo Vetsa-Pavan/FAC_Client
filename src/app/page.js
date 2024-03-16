@@ -2,8 +2,8 @@
 
 export default function Home() {
   return (
-    <>
-    hello
-    </>
+    <div>
+      {/* hello */}
+    </div>
   );
 }
