@@ -1,6 +1,7 @@
 "use client";
 import { useState , useEffect} from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 import Logo from '../../public/Images/navLogo.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faCaretDown, faEnvelope, faPhone, faMapLocationDot} from "@fortawesome/free-solid-svg-icons";
@@ -54,11 +55,12 @@ export default function Header() {
           <p className='font-bold text-sm text-nowrap'> Social Welfare Association</p>
         </div>
           
-        <div className={`absolute -top-96 left-0 w-full   flex flex-col lg:static lg:flex-row  lg:justify-center lg:gap-5  ${isListOpen && 'top-44'} `}>    
+        <div className={`absolute -top-96 left-0 w-full bg-white flex flex-col lg:static lg:flex-row  lg:justify-center lg:gap-5  ${isListOpen && 'top-44 z-50'} `}>    
           <ul className="flex flex-col justify-between lg:flex-row lg:items-center left-5 lg:gap-1">
             <li className="border-solid border-y-2 border-[#C4C4C4] py-3 px-2 flex justify-between lg:justify-normal lg:flex lg:text-nowrap lg:gap-2 lg:border-none">
               <div>
-                <a href='/' className=' font-bold text-xs text-[#2e2828]'>WHO WE ARE</a>
+                {/* <a href='/' className=' font-bold text-xs text-[#2e2828]'>WHO WE ARE</a> */}
+                <Link href="/" className=' font-bold text-xs text-[#2e2828]'>WHO WE ARE</Link>
               </div>
               <a href='/'>
               <FontAwesomeIcon icon={faCaretDown}/>
