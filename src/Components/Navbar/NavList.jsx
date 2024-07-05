@@ -3,6 +3,7 @@ import React from "react";
 export const lists = [
   {
     name: "WHO WE ARE",
+    submenu: true,
     sublist: [
       { name: "Our Vision & Mission", link: "/" },
       { name: "Our Presidents", link: "/" },
@@ -11,6 +12,7 @@ export const lists = [
   },
   {
     name: "WHAT WE DO",
+    submenu: true,
     sublist: [
       { name: "Career Guidance", link: "/" },
       { name: "Blanket Drive", link: "/" },
@@ -21,6 +23,7 @@ export const lists = [
   },
   {
     name: "HOW TO HELP",
+    submenu: true,
     sublist: [
       { name: "FUNDRAISE WITH US", link: "/" },
       { name: "ACTIVE FUNDRAISING CAMPAIGNS", link: "/" },
@@ -34,6 +37,7 @@ export const lists = [
   },
   {
     name: "EVENTS & BLOGS",
+    submenu: true,
     sublist: [
       { name: "PHOTO GALLERY", link: "/" },
       { name: "VIDEO GALLERY", link: "/" },
@@ -43,5 +47,6 @@ export const lists = [
   },
   {
     name: "CONTACT US",
+    submenu: false,
   },
 ];
