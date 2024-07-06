@@ -90,7 +90,7 @@ const Nav = () => {
         </div>
         {/* Mobile nav */}
         <ul
-          className={` md:min-[990px]:hidden absolute w-full bg-white p-5 top-6 overflow-y-auto py-32 pl-4 duration-500      
+          className={` md:min-[990px]:hidden absolute w-full bg-white p-5 top-[4.5rem] overflow-y-auto py-32 pl-4 duration-500      
          ${isListOpen ? "left-0" : "left-[-100%]"}
         `}
         >
