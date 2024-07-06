@@ -2,6 +2,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import '../styles/mobileHeader.css'
 import Socials from "./Socials";
 import {
   faInstagram,
@@ -11,18 +12,18 @@ import {
 
 const MobileHeader = () => {
   return (
-    <div className="flex flex-row gap-2 items-center px-1 font-bold md:min-[990px]:hidden justify-between">
-      <div className="flex gap-1">
-        <div className="flex gap-1">
+    <div className="bg-[#40739e] flex flex-row p-4 gap-2 items-center px-1 font-bold md:min-[990px]:hidden justify-between">
+      <div className="flex gap-1 ml-4 ">
+        <div className="flex gap-1 text-white">
           <FontAwesomeIcon icon={faEnvelope} size="sm" className=" pt-2" />
           <p className=" text-sm pt-1">foracausehitam@gmail.com</p>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-1 text-white">
           <FontAwesomeIcon icon={faPhone} size="sm" className=" pt-2" />
           <p className=" text-sm pt-1">6301136672</p>
         </div>
       </div>
-      <div className="flex flex-row gap-2 items-center">
+      <div className="flex mr-4 custompx flex-row gap-2 items-center">
         <Socials
           className={
             " w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 to-red-500"
