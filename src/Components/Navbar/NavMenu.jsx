@@ -19,14 +19,19 @@ const NavMenu = () => {
           <div className="md:cursor-pointer group">
             <h1 className=" py-3 font-bold text-xs text-[#2e2828] flex justify-between items-center md:pr-0  group">
               {list.name}{" "}
-              <span className=" text-sm pb-2 md:mt-1 md:ml-2  md:block  group-hover:rotate-180 group-hover:-mt-2">
+              {/* <span className=" text-sm pb-2 md:mt-1 md:ml-2  md:block  group-hover:rotate-180 group-hover:-mt-2">
                 <FontAwesomeIcon icon={faCaretDown} />
-              </span>
+              </span> */}
+              {list.submenu && (
+                <span className="text-sm pb-2 md:mt-1 md:ml-2 md:block group-hover:rotate-180 group-hover:-mt-2">
+                  <FontAwesomeIcon icon={faCaretDown} />
+                </span>
+              )}
             </h1>
             {list.submenu && (
               <div>
                 {/* contains 2 divs arrow div and list div */}
-                <div className=" absolute top-28 hidden group-hover:block hover:block">
+                <div className=" absolute hidden group-hover:block hover:block">
                   {/* arrow div - has 2 divs 1st div takes properties of above div and 2nd div is absolute to 1st div to avoid issue */}
                   <div>
                     <div
