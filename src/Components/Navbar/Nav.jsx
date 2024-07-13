@@ -17,7 +17,7 @@ const Nav = () => {
   const [isListOpen, setIsListOpen] = useState(false);
 
   return (
-    <nav className="pt-4 pb-1">
+    <nav className="fixed w-full pt-4 pb-1">
       <div className="flex items-center font-medium justify-around">
         <div className="z-50 p-5 flex md:min-[990px]:w-auto w-full justify-between">
           <div className="flex flex-col items-center">

@@ -1,11 +1,10 @@
-import img_1 from '../../public/Images/clean_img.jpg';
+import img_1 from "../../public/Images/clean_img.jpg";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <section className="h-screen bg-{img_1} bg-cover">
-      
-
-
+    <section>
+      <Image src={img_1}></Image>
     </section>
   );
 }
