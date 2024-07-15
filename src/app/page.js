@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <section>
       <Image src={img_1}></Image>
+      <Image src={img_1}></Image>
     </section>
   );
 }

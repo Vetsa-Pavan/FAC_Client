@@ -17,7 +17,7 @@ const Nav = () => {
   const [isListOpen, setIsListOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full pt-4 pb-1">
+    <nav className=" absolute md:min-[990px]:fixed w-full pt-4 pb-1">
       <div className="flex items-center font-medium justify-around">
         <div className="z-50 p-5 flex md:min-[990px]:w-auto w-full justify-between">
           <div className="flex flex-col items-center">
@@ -90,7 +90,7 @@ const Nav = () => {
         </div>
         {/* Mobile nav */}
         <ul
-          className={` md:min-[990px]:hidden absolute w-full bg-white p-5 top-[4.5rem] overflow-y-auto py-32 pl-4 duration-500      
+          className={` md:min-[990px]:hidden absolute w-full bg-white p-5 top-[0.01rem] overflow-y-auto py-32 pl-4 duration-500      
          ${isListOpen ? "left-0" : "left-[-100%]"}
         `}
         >

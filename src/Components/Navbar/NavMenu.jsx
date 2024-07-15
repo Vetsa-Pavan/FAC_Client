@@ -2,28 +2,31 @@
 import React, { useState } from "react";
 import { lists } from "./NavList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCaretDown,
-  faEnvelope,
-  faPhone,
-  faMapLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 const NavMenu = () => {
   const [heading, setHeading] = useState("");
-  const [subHeading, setSubHeading] = useState("");
   return (
     <>
       {lists.map((list) => (
         <div>
           <div className="md:cursor-pointer group">
-            <h1 className=" py-3 font-bold text-xs text-[#2e2828] flex justify-between items-center md:pr-0  group">
+            <h1
+              className=" py-3 font-bold text-xs text-[#2e2828] flex justify-between items-center md:pr-0  group"
+              onClick={() => {
+                heading !== list.name ? setHeading(list.name) : setHeading("");
+              }}
+            >
               {list.name}{" "}
-              {/* <span className=" text-sm pb-2 md:mt-1 md:ml-2  md:block  group-hover:rotate-180 group-hover:-mt-2">
-                <FontAwesomeIcon icon={faCaretDown} />
-              </span> */}
               {list.submenu && (
-                <span className="text-sm pb-2 md:mt-1 md:ml-2 md:block group-hover:rotate-180 group-hover:-mt-2">
+                <span className=" text-sm md:min-[990px]:hidden">
+                  <FontAwesomeIcon
+                    icon={heading === list.name ? faCaretUp : faCaretDown}
+                  />
+                </span>
+              )}
+              {list.submenu && (
+                <span className="text-sm pb-2 md:mt-1 md:ml-2 md:min-[990px]:block hidden group-hover:rotate-180 group-hover:-mt-2">
                   <FontAwesomeIcon icon={faCaretDown} />
                 </span>
               )}
@@ -31,7 +34,7 @@ const NavMenu = () => {
             {list.submenu && (
               <div>
                 {/* contains 2 divs arrow div and list div */}
-                <div className=" absolute hidden group-hover:block hover:block">
+                <div className=" absolute hidden group-hover:md:min-[990px]:block hover:md:min-[990px]:block">
                   {/* arrow div - has 2 divs 1st div takes properties of above div and 2nd div is absolute to 1st div to avoid issue */}
                   <div>
                     <div
@@ -59,6 +62,25 @@ const NavMenu = () => {
                 </div>
               </div>
             )}
+          </div>
+          {/* Mobile menus */}
+          <div
+            className={`
+            ${heading === list.name ? "md:min-[990px]:hidden" : "hidden"}
+          `}
+          >
+            <div className="md:min-[990px]:hidden flex flex-col gap-2 pl-5">
+              {list.submenu &&
+                list.sublist.map((mylist) => (
+                  <div>
+                    <div>
+                      <li>
+                        <a href={mylist.link}>{mylist.name}</a>
+                      </li>
+                    </div>
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       ))}
